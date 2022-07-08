@@ -18,8 +18,6 @@
     <link rel="stylesheet" href="{% static "css/bootstrap-datepicker.css" %}">
     <link rel="stylesheet" href="{% static "css/jquery.timepicker.css" %}">
 
-    
-
     <link rel="stylesheet" href="{% static "css/icomoon.css" %}">
     <link rel="stylesheet" href="{% static "css/style.css" %}">
   </head>
@@ -38,7 +36,7 @@
             <li class="nav-item active"><a href="#section-home" class="nav-link">Главная</a></li>
             <li class="nav-item"><a href="#section-about" class="nav-link">О нас</a></li>
             {% comment %} <li class="nav-item"><a href="#section-offer" class="nav-link">Offer</a></li> {% endcomment %}
-            <li class="nav-item"><a href="#section-menu" class="nav-link">Меню</a></li>
+            <li class="nav-item"><a href="#section-menu" class="nav-link">Каталог</a></li>
             <li class="nav-item"><a href="#section-news" class="nav-link">Новости</a></li>
             <li class="nav-item"><a href="#section-gallery" class="nav-link">Галлерея</a></li>
             <li class="nav-item"><a href="#section-contact" class="nav-link">Контакты</a></li>
@@ -59,17 +57,16 @@
         </div>
       </div>
     </section>
-    <!-- END section -->
     
-    {% include 'include/about.html' %}
+    {% include 'about/about.html' %}
 
-    {% include 'include/menu.html' %}
+    {% include 'catalog/menu.html' %}
 
-    {% include 'include/news.html' %}
+    {% include 'news/news.html' %}
 
-    {% include 'include/gallery.html' %}
+    {% include 'gallery/gallery.html' %}
 
-    {% include 'include/contact.html' %}
+    {% include 'about/contact.html' %}
     
     {% include 'include/footer.html' %}
 
