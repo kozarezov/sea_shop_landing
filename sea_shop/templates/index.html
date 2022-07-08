@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Вкус Моря</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700|Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/open-iconic-bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/animate.css" %}">
+    
+    <link rel="stylesheet" href="{% static "css/owl.carousel.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/owl.theme.default.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/magnific-popup.css" %}">
+
+    <link rel="stylesheet" href="{% static "css/bootstrap-datepicker.css" %}">
+    <link rel="stylesheet" href="{% static "css/jquery.timepicker.css" %}">
+
+    
+
+    <link rel="stylesheet" href="{% static "css/icomoon.css" %}">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+  </head>
+
+  <body data-spy="scroll" data-target="#site-navbar" data-offset="200">
+    
+    <nav class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light" id="site-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Вкус Моря</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-nav" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="site-nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a href="#section-home" class="nav-link">Главная</a></li>
+            <li class="nav-item"><a href="#section-about" class="nav-link">О нас</a></li>
+            {% comment %} <li class="nav-item"><a href="#section-offer" class="nav-link">Offer</a></li> {% endcomment %}
+            <li class="nav-item"><a href="#section-menu" class="nav-link">Меню</a></li>
+            <li class="nav-item"><a href="#section-news" class="nav-link">Новости</a></li>
+            <li class="nav-item"><a href="#section-gallery" class="nav-link">Галлерея</a></li>
+            <li class="nav-item"><a href="#section-contact" class="nav-link">Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- END nav -->
+
+    <section class="site-cover" style="background-image: url({% static "images/bg_3.jpg" %});" id="section-home">
+      <div class="container">
+        <div class="row align-items-center justify-content-center text-center site-vh-100">
+          <div class="col-md-12">
+            <h1 class="site-heading site-animate mb-3">Вас приветствует Вкус Моря!</h1>
+            <h2 class="h5 site-subheading mb-5 site-animate">Приходите к нам за свежими и вкусными морепродуктами.</h2>    
+            <p><a href="https://colorlib.com/" target="_blank" class="btn btn-outline-white btn-lg site-animate" data-toggle="modal" data-target="#reservationModal">Контакты</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+    
+    {% include 'include/about.html' %}
+
+    {% include 'include/menu.html' %}
+
+    {% include 'include/news.html' %}
+
+    {% include 'include/gallery.html' %}
+
+    {% include 'include/contact.html' %}
+    
+    {% include 'include/footer.html' %}
+
+    {% include 'include/modal.html' %}
+
+    {% include 'include/loader.html' %}
+
+    <script src="{% static "js/jquery.min.js" %}"></script>
+    <script src="{% static "js/popper.min.js" %}"></script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+    <script src="{% static "js/jquery.easing.1.3.js" %}"></script>
+    <script src="{% static "js/jquery.waypoints.min.js" %}"></script>
+    <script src="{% static "js/owl.carousel.min.js" %}"></script>
+    <script src="{% static "js/jquery.magnific-popup.min.js" %}"></script>
+
+    <script src="{% static "js/bootstrap-datepicker.js" %}"></script>
+    <script src="{% static "js/jquery.timepicker.min.js" %}"></script>
+    
+    <script src="{% static "js/jquery.animateNumber.min.js" %}"></script>
+    
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="{% static "js/google-map.js" %}"></script>
+
+    <script src="{% static "js/main.js" %}"></script>
+
+    
+  </body>
+</html>
