@@ -1,3 +1,4 @@
+from unicodedata import category
 from django.shortcuts import get_object_or_404, redirect, render
 
 from contacts.models import Contact
@@ -10,7 +11,14 @@ def index(request):
     """Основная страница."""
     contacts = get_object_or_404(Contact, pk=1)
     about = get_object_or_404(About, pk=1)
-    catalogs = Catalog.objects.all()
+    freezing = Catalog.objects.filter(category='Замороженная продукция')
+    fresh = Catalog.objects.filter(category='Свежие дары моря')
+    snack = Catalog.objects.filter(category='Закуски')
+    catalogs = {
+        'freezing': freezing,
+        'fresh': fresh,
+        'snack': snack
+    }
     galleryes = Gallery.objects.all()
     news = News.objects.all()
 

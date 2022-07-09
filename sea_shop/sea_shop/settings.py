@@ -19,7 +19,8 @@ INSTALLED_APPS = [
     'about',
     'news',
     'gallery',
-    'contacts'
+    'contacts',
+    'sorl.thumbnail',
 ]
 
 MIDDLEWARE = [
