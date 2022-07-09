@@ -7,6 +7,6 @@ from .models import About
 class AboutAdmin(admin.ModelAdmin):
     """Настройки админки для модели About."""
 
-    list_display = ('address', 'phone', 'staff', 'text')
-    search_fields = ('text',)
+    list_display = ('title', 'text')
+    search_fields = ('title', 'text',)
     empty_value_display = "-пусто-"

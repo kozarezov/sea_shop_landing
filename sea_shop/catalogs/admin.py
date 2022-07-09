@@ -1,3 +1,11 @@
 from django.contrib import admin
+from . import models
 
-# Register your models here.
+@admin.register(models.Catalog)
+class AboutAdmin(admin.ModelAdmin):
+    """Настройки админки для модели Catalog.""" 
+
+    list_display = ('name', 'category', 'price', 'sale', 'text')
+    search_fields = ('name', 'category',)
+    list_editable = ('category',)
+    empty_value_display = "-пусто-"

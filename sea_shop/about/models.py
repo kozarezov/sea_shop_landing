@@ -1,10 +1,7 @@
-from operator import mod
 from django.db import models
 
 class About(models.Model):
-    address = models.CharField('Адрес', max_length=1024)
-    phone = models.CharField('Телефон', max_length=20)
-    staff = models.CharField('ФИО сотрудника', max_length=50)
+    title = models.CharField('Заголовок', max_length=200)
     text = models.TextField('Описание', help_text='Введите текст "О нас"')
 
     class Meta:
@@ -12,4 +9,9 @@ class About(models.Model):
         verbose_name_plural = 'О нас'
 
     def __str__(self):
-        return self.text[:15]
+        return self.title
+
+    def __iter__(self):
+        for field in self._meta.fields:
+            if field.verbose_name != 'ID':
+                yield (field.verbose_name, field.value_to_string(self))

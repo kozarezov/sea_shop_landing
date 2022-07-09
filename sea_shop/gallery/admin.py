@@ -1,3 +1,11 @@
 from django.contrib import admin
 
-# Register your models here.
+from . import models
+
+@admin.register(models.Gallery)
+class AboutAdmin(admin.ModelAdmin):
+    """Настройки админки для модели Gallery.""" 
+
+    list_display = ('title',)
+    search_fields = ('title',)
+    empty_value_display = "-пусто-"

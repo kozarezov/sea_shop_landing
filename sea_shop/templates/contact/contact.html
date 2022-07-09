@@ -1,0 +1,29 @@
+{% load static %}
+<section class="site-section bg-light" id="section-contact">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-12 text-center mb-5 site-animate">
+          <h2 class="display-4">Контакты</h2>
+          <div class="row justify-content-center">
+            <div class="col-md-7">
+              <p class="lead">Расскажите о своем опыте посещения нашего магазина. Мы будем рады как плохим, там и хорошим отзывам. Для этого свяжитесь с нами любым способом (указаны ниже)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-1"></div>
+        <div class="col-md-12 text-center site-animate">
+          {% comment %} <p><img src={% static "images/about_img_1.jpg" %} alt="" class="img-fluid"></p> {% endcomment %}
+          <p class="text-black">
+            {% for field, val in contacts %}
+              {{ field }}: <br> {{ val }} <br> <br>
+            {% endfor %}
+          </p>
+
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  <div id="map"></div>

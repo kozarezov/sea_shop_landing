@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}О нас{% endblock %}
+
+{% block content %}
+
+<nav class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark " id="site-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'index' %}">Вкус Моря</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-nav" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Меню
+      </button>
+
+      <div class="collapse navbar-collapse" id="site-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a href="{% url 'index' %}" class="nav-link">Главная страница</a></li>
+        </ul>
+      </div>
+    </div>
+</nav>
+
+<section class="site-section" id="section-about">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 site-animate mb-5">
+          <h4 class="site-sub-title">О нас</h4>
+          <h2 class="site-primary-title display-4">{{ about.title }}</h2>
+          <p class="mb-4">{{ about.text }}</p>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-6 site-animate img" data-animate-effect="fadeInRight">
+          <img src={% static "images/about_img_1.jpg" %} alt="Free Template by colorlib.com" class="img-fluid">
+        </div>
+      </div>
+    </div>
+</section>
+{% endblock %}
