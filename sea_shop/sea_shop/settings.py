@@ -1,9 +1,9 @@
 import os
+from .config import SK
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = 'django-insecure-glhs9r3t=n*8ad&1bi)r8#n4&pt4%)0mw5g+bz%2ejf$5)3dg$'
-
+SECRET_KEY = SK
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
