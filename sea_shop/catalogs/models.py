@@ -1,4 +1,5 @@
 from django.db import models
+from sorl.thumbnail import ImageField
 
 class Catalog(models.Model):
     CATEGORY = [
@@ -10,9 +11,9 @@ class Catalog(models.Model):
     name = models.CharField('Название', max_length=200)
     category = models.CharField('Категория', choices=CATEGORY, max_length=200, blank=True)
     price = models.IntegerField('Цена')
-    sale = models.IntegerField('Размер скидки %', help_text='Введите размер скидки в %', blank=True)
+    price_category = models.CharField('Категория цены', max_length=20, help_text='Текст для описания цены (за кг / за шт / за 100г.)')
     text = models.TextField('Описание товара', blank=True)
-    image = models.ImageField('Фото', upload_to='catalog/', blank=True)
+    image = ImageField('Фото', upload_to='catalog/', blank=True)
 
     class Meta:
         verbose_name = 'Продукт'

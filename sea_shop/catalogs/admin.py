@@ -5,7 +5,7 @@ from . import models
 class AboutAdmin(admin.ModelAdmin):
     """Настройки админки для модели Catalog.""" 
 
-    list_display = ('name', 'category', 'price', 'sale', 'text')
+    list_display = ('name', 'category', 'price', 'price_category', 'text')
     search_fields = ('name', 'category',)
     list_editable = ('category',)
     empty_value_display = "-пусто-"

@@ -1,0 +1,89 @@
+{% load static %}
+{% load thumbnail %}
+<section class="site-section" id="section-menu">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center mb-5 site-animate">
+          <h2 class="display-4">Каталог</h2>
+          <div class="row justify-content-center">
+            <div class="col-md-7">
+              <p class="lead">У нас вы найдете морепродукты всех видов.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 text-center">
+
+          <ul class="nav site-tab-nav nav-pills mb-5" id="pills-tab" role="tablist">
+            <li class="nav-item site-animate">
+              <a class="nav-link active" id="pills-freezing-tab" data-toggle="pill" href="#pills-freezing" role="tab" aria-controls="pills-freezing" aria-selected="true">Замороженная продукция</a>
+            </li>
+            <li class="nav-item site-animate">
+              <a class="nav-link" id="pills-fresh-tab" data-toggle="pill" href="#pills-fresh" role="tab" aria-controls="pills-fresh" aria-selected="false">Свежие дары моря</a>
+            </li>
+            <li class="nav-item site-animate">
+              <a class="nav-link" id="pills-snack-tab" data-toggle="pill" href="#pills-snack" role="tab" aria-controls="pills-snack" aria-selected="false">Закуски</a>
+            </li>
+          </ul>
+
+          <div class="tab-content text-left">
+            <div class="tab-pane fade show active" id="pills-freezing" role="tabpanel" aria-labelledby="pills-freezing-tab">
+              <div class="row">
+                {% for product in catalogs.freezing %}
+                  <div class="col-md-6 site-animate">
+                    <div class="media menu-item">
+                      {% thumbnail product.image "400x400" crop="center" upscale=True as im %}
+                        <img class="mr-3" src="{{ im.url }}" class="img-fluid" alt="Нет фото">
+                      {% endthumbnail %}
+                      <div class="media-body">
+                        <h5 class="mt-0">{{ product.name }}</h5>
+                        <p>{{ product.text }}</p>
+                        <h6 class="text-primary menu-price">{{ product.price }}₽</h6>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="tab-pane fade" id="pills-fresh" role="tabpanel" aria-labelledby="pills-fresh-tab">
+              <div class="row">
+                {% for product in catalogs.fresh %}
+                  <div class="col-md-6 site-animate">
+                    <div class="media menu-item">
+                      {% thumbnail product.image "400x400" crop="center" upscale=True as im %}
+                        <img class="mr-3" src="{{ im.url }}" class="img-fluid" alt="Нет фото">
+                      {% endthumbnail %}
+                      <div class="media-body">
+                        <h5 class="mt-0">{{ product.name }}</h5>
+                        <p>{{ product.text }}</p>
+                        <h6 class="text-primary menu-price">{{ product.price }}₽</h6>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="tab-pane fade" id="pills-snack" role="tabpanel" aria-labelledby="pills-snack-tab">
+              <div class="row">
+                {% for product in catalogs.snack %}
+                  <div class="col-md-6 site-animate">
+                    <div class="media menu-item">
+                      {% thumbnail product.image "400x400" crop="center" upscale=True as im %}
+                        <img class="mr-3" src="{{ im.url }}" class="img-fluid" alt="Нет фото">
+                      {% endthumbnail %}
+                      <div class="media-body">
+                        <h5 class="mt-0">{{ product.name }}</h5>
+                        <p>{{ product.text }}</p>
+                        <h6 class="text-primary menu-price">{{ product.price }}₽/{{ product.price_category }}</h6>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+</section>

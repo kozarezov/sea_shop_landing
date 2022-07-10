@@ -970,3 +970,8 @@ textarea.form-control {
     stroke-dashoffset: -136px;
   }
 }
+
+svg {
+  vertical-align: middle;
+  margin-top: 13;
+}
