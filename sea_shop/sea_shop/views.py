@@ -32,3 +32,12 @@ def index(request):
 
     template_name = 'index.html'
     return render(request, template_name, context=context)
+
+def error_404_view(request, exception):
+    return render(request, 'error/error404.html')
+
+def error_500_view(request):
+    return render(request, 'error/error500.html')
+
+def error_403_view(request, exception):
+    return render(request, 'error/error403.html')

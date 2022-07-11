@@ -18,3 +18,7 @@ if settings.DEBUG:
     urlpatterns += static(
         settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
     )
+
+handler404 = 'sea_shop.views.error_404_view'
+handler500 = 'sea_shop.views.error_500_view'
+handler403 = 'sea_shop.views.error_403_view'
