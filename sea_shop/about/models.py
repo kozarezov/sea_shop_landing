@@ -4,7 +4,7 @@ from django.db import models
 class About(models.Model):
     title = models.CharField('Заголовок', max_length=200)
     text = models.TextField('Описание', help_text='Введите текст "О нас"')
-    image = models.ImageField('Картинка', upload_to='about/', blank=True)
+    image = models.ImageField('Картинка', upload_to='about/', blank=True, help_text='Изображение 1000х668 (файл не должен содержать русские символы в названии)')
 
     class Meta:
         verbose_name = 'О нас'

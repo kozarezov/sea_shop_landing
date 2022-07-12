@@ -2,7 +2,7 @@ from django.db import models
 
 class Gallery(models.Model):
     title = models.CharField('Название', max_length=200)
-    image = models.ImageField('Фото', upload_to='gallery/', blank=True)
+    image = models.ImageField('Фото', upload_to='gallery/', blank=True, help_text='Изображение 400х400 (файл не должен содержать русские символы в названии)')
 
     class Meta:
         verbose_name = 'Фотография'

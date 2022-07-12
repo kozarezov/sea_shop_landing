@@ -13,7 +13,7 @@ class Catalog(models.Model):
     price = models.IntegerField('Цена')
     price_category = models.CharField('Категория цены', max_length=20, help_text='Текст для описания цены (за кг / за шт / за 100г.)')
     text = models.TextField('Описание товара', blank=True)
-    image = ImageField('Фото', upload_to='catalog/', blank=True)
+    image = ImageField('Фото', upload_to='catalog/', blank=True, help_text='Изображение 400х400 (файл не должен содержать русские символы в названии)')
 
     class Meta:
         verbose_name = 'Продукт'

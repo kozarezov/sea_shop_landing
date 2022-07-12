@@ -1,5 +1,5 @@
 import os
-from .config import SK
+from .config import SK, BEGET_USER, BEGET_PWD
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -57,8 +57,14 @@ WSGI_APPLICATION = 'sea_shop.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+         'ENGINE': 'django.db.backends.mysql',
+         'NAME': BEGET_USER,
+         'USER': BEGET_USER,
+         'PASSWORD': BEGET_PWD,
+         'HOST': 'localhost',
+         'PORT': '3306',
     }
 }
 
@@ -89,7 +95,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATICFILES_DIRS = []
 
 MEDIA_URL = '/media/'
 

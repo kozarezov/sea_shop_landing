@@ -127,3 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+config.py
+
+sea_shop/config.py
+sea_shop/sea_shop/config.py

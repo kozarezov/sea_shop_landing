@@ -3,7 +3,7 @@ from django.db import models
 class News(models.Model):
     title = models.CharField('Заголовок', max_length=200)
     text = models.TextField('Описание')
-    image = models.ImageField('Фото', upload_to='news/', blank=True)
+    image = models.ImageField('Фото', upload_to='news/', blank=True, help_text='Изображение 400х266 (файл не должен содержать русские символы в названии)')
     pub_date = models.DateTimeField('Дата публикации', auto_now_add=True)
 
     class Meta:
